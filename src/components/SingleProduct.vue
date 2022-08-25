@@ -29,6 +29,7 @@ export default {
         img {
             max-width: 100%;
             margin-bottom: 1rem;
+            object-fit: cover;
         }
 
         h3 {

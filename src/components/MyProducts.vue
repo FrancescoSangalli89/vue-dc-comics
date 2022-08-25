@@ -1,8 +1,13 @@
 <template>
     <main>
+        <img src="../assets/images/jumbotron.jpg" alt="jumbotron image">
+        <span class="current-series">
+            <h3>CURRENT SERIES</h3>
+        </span>
         <div class="container products-list">
             <SingleProduct v-for="(product, index) in products" :key="index" :thumb="product.thumb" :series="product.series"/>
         </div>
+        <button>LOAD MORE</button>
     </main>
 </template>
 
@@ -97,15 +102,50 @@ export default {
 </script>
 
 <style lang="scss">
+
+    @import '../styles/vars.scss';
+
     main {
         background-color: #000;
         color: #fff;
+        position: relative;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .current-series {
+            display: inline-block;
+            background-color: $brand-color;
+            padding: 10px 30px;
+            position: absolute;
+            left: 150px;
+            top: 380px;
+        }
 
 
         .products-list {
             display: flex;
             flex-wrap: wrap;
             padding: 2rem 0;
+        }
+
+        button {
+            background-color: $brand-color;
+            color: #fff;
+            border: none;
+            padding: 10px 40px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 800;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 </style>
